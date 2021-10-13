@@ -1,5 +1,6 @@
 from flask import Flask, render_template , request  
 from flasgger import Swagger 
+import os
 
 
 #WSGI 
@@ -43,7 +44,8 @@ def get_req_parameters():
     return f"{name} {roll} studies in praxis", 200
 
 if __name__ == "__main__":
-    app.run(debug=True, port = 8091, host = "0.0.0.0")
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, port = port, host = "0.0.0.0")
     
 # fav icon 4040 since it's empty 
 
