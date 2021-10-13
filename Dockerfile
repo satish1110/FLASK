@@ -3,9 +3,10 @@ FROM python:3.6-alpine
 ## change working dir 
 WORKDIR /project 
 ## copying all files 
-ADD . /
+ADD . /project
 ## install requirements 
 RUN pip install --upgrade pip 
-RUN pip install -r /requirements.txt 
+RUN pip install -r requirements.txt 
+EXPOSE 5000
 ## run file 
-CMD ['python', 'main.py']
+CMD ["python" , "docker_demo.py"]

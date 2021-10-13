@@ -43,6 +43,7 @@ def get_req_parameters():
     return f"{name} {roll} studies in praxis", 200
 
 if __name__ == "__main__":
-    app.run(debug=True, port = "8091")
+    app.run(debug=True, port = 8091, host = "0.0.0.0")
     
 # fav icon 4040 since it's empty 
+
